@@ -3,11 +3,11 @@ package manager
 import models.TaskModel
 
 interface TaskManager {
-    fun getAllTasks(taskModel: TaskModel)
+    fun getAllTasks()
 
-    fun addTask(taskModel: TaskModel, onSuccess:() -> Unit)
+    fun addTask(taskModel: TaskModel)
 
-    fun changeStatus(taskModel: TaskModel, onSuccess:() -> Unit)
+    fun changeStatus(taskModel: TaskModel)
 
-    fun deleteTask(taskModel: TaskModel, onSuccess:() -> Unit)
+    fun deleteTask(taskModel: TaskModel)
 }

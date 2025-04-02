@@ -1,3 +1,6 @@
 package models
 
-class SimpleTask(id: Int, title: String): TaskModel(id, title)
+data class SimpleTask(
+    override val id: Int,
+    override val title: String
+): TaskModel(id, title)

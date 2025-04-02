@@ -6,10 +6,10 @@ import models.SimpleTask
 import models.TaskModel
 import models.enums.TaskStatus
 
-class TaskManagerImpl {
+class TaskManagerImpl : TaskManager {
     private val tasks = mutableListOf<TaskModel>()
 
-    fun getAllTasks(){
+    override fun getAllTasks(){
         println("Список задач:")
         for(task in tasks){
             when (task) {
@@ -26,11 +26,11 @@ class TaskManagerImpl {
         }
     }
 
-    fun addTask(taskModel: TaskModel){
+    override fun addTask(taskModel: TaskModel){
         tasks.add(taskModel)
     }
 
-    fun changeStatus(taskModel: TaskModel){
+    override fun changeStatus(taskModel: TaskModel){
         when (taskModel.status) {
 
             TaskStatus.PENDING -> taskModel.status = TaskStatus.IN_PROGRESS
@@ -42,7 +42,7 @@ class TaskManagerImpl {
         }
     }
 
-    fun deleteTask(taskModel: TaskModel){
+    override fun deleteTask(taskModel: TaskModel){
         tasks.remove(taskModel)
     }
 

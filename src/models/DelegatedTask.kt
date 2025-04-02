@@ -1,6 +1,9 @@
 package models
 
-class DelegatedTask(id: Int, title: String): TaskModel(id, title){
+class DelegatedTask(
+    override val id: Int,
+    override val title: String
+): TaskModel(id, title){
     private val subTasks = mutableListOf<SimpleTask>()
 
     fun addSubTask(task: SimpleTask){
